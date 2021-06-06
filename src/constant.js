@@ -1,0 +1,1 @@
+export const STORY_COLLECTION_API = "https://cors-anywhere.herokuapp.com/https://ace.qtstage.io/api/v1/collections/entertainment";

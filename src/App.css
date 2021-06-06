@@ -18,8 +18,9 @@
 @media (max-width: 426px) {
   .storyGrid{
     grid-template-columns: 1fr;
+    padding: 5px 10px;
   }
   .App-nabar-heading{
-    font-size: 15px;
+    font-size: 2em;
   }
 }
