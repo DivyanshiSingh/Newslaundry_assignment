@@ -24,7 +24,6 @@ export class Card extends Component {
 
 	}
   render() {
-    // console.log(this.props.cardContent);
     const { story, id } = this.props.cardContent;
     const date = new Date(story["content-created-at"]);
     return (

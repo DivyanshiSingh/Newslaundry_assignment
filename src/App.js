@@ -37,12 +37,15 @@ function App() {
             return item.id;
         })
         .filter((item) => item !== undefined);
+      if (searchedIdList.length > 0) {
+        const searchedStoryList = list.filter((item) => {
+          return searchedIdList.includes(item.id);
+        });
 
-      const searchedStoryList = list.filter((item) => {
-        return searchedIdList.includes(item.id);
-      });
-      setFilteredItems(searchedStoryList);
-    } else if (searchKey.length < 2) {
+        setFilteredItems(searchedStoryList);
+      }
+    }
+    if (searchKey.length < 2) {
       setFilteredItems([]);
     }
   }
@@ -67,7 +70,7 @@ function App() {
       <div className="App-navbar">
         <p className="App-nabar-heading">Newslaundry Intern Assignment</p>
       </div>
-      <Search onChange={(e) => handleChange(e)} value={searchKey} />
+      <Search onChange={(e) => handleChange(e)} value={searchKey}/>
       <div className="storyGrid">
         {filteredItems.length ? renderSearchItems() : renderItems()}
       </div>
